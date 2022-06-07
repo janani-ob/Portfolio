@@ -3,26 +3,833 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/323ed46147.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css" > 
 </head>
+
 <body>
- <nav class ="navbar">
+    <style>
+        * {
+            margin: 0;
+            padding-left: 0;
+            box-sizing: border-box;
+        }
 
-    <ul>
-        <li><a href ="#"> Home </a></li>
-        <li><a href ="#"> About </a></li>
-        <li><a href ="#"> Skills </a></li>
-        <li><a href ="#"> Qualifications </a></li>
-        <li><a href ="#"> Portfolio </a></li>
-        <li><a href ="#"> Contact me </a></li>
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
 
-    </ul>
- </nav>            
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 20px 0px;
+        }
+
+        .navbar ul li {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 25px;
+        }
+
+        .navbar ul li a:hover {
+            color: black;
+            box-shadow: 0 0 10px rgb(79, 139, 213);
+        }
+
+
+
+
+        /* -------------------HOME SECTION----------------*/
+        .main {
+
+            display: block;
+            margin-left: 0%;
+            max-height: 100%;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .home_section {
+            margin-top: 150px;
+        }
+
+        .home_container {
+            gap: 1rem;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .container {
+            max-width: 900px;
+            margin-left: var(--mb-1-5);
+            margin-right: var(--mb-1-5);
+        }
+
+        @media screen and (min-width: 568px) {
+            .home_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .home_content {
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .home_social {
+            padding-right: 50px;
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        .home_social-icon {
+            font-size: 2.5rem;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .home_info {
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .home_title {
+            font-size: 50px;
+            height: 50px;
+            width: 500px;
+        }
+
+        .home_subtitle {
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .home_description {
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+
+        .avatar {
+            margin-left: 450px;
+            vertical-align: middle;
+            width: 250px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        .about_title {
+            font-size: 25px;
+            height: 50px;
+            width: 500px;
+        }
+
+        /* -------------------ABOUT SECTION----------------*/
+
+        .about_section {
+            margin-top: 150px;
+        }
+
+        .about_container {
+
+            height: 300px;
+            width: 50%;
+        }
+
+        .grid {
+
+            height: 300px;
+            width: 50%;
+            display: grid;
+        }
+
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            max-width: 900px;
+        }
+
+        @media screen and (min-width: 568px) {
+            .about_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .about_content {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .about_social {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-right: 50px;
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .about_info {
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .about_title {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 50px;
+            height: 50px;
+            width: 500px;
+        }
+
+        .about_subtitle {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .about_description {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+
+
+        /* -------------------SKILL SECTION----------------*/
+
+        /*  .skill_section {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px
+        }
+
+        .skill_container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            gap: 1rem;
+        }
+
+        .grid {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            display: grid;
+        }
+
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            max-width: 900px;
+
+        }
+
+        @media screen and (min-width: 568px) {
+            .skill_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .skill_content {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .skill_info {
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .skill_title {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+        }
+
+        .skill_subtitle {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .skill_description {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+*/
+
+        .skill_section {
+            margin-top: 150px;
+        }
+
+        .skill_container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            gap: 1rem;
+        }
+
+        .grid {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            display: grid;
+        }
+
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            max-width: 900px;
+        }
+
+        @media screen and (min-width: 568px) {
+            .skill_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .skill_content {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .skill_social {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-right: 50px;
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .skill_info {
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .skill_title {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 50px;
+            height: 50px;
+            width: 500px;
+        }
+
+        .skill_subtitle {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .skill_description {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+
+
+        /* -------------------QUALIFICATION SECTION----------------*/
+
+        /*
+        .qualification_section {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px
+        }
+
+        .qualification_container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            gap: 1rem;
+        }
+
+        .grid {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            display: grid;
+        }
+
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            max-width: 900px;
+
+        }
+
+        @media screen and (min-width: 568px) {
+            .qualification_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .qualification_content {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .qualification_info {
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .qualification_title {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+        }
+
+        .qualification_subtitle {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .qualification_description {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+        */
+
+
+        .qualification_section {
+            margin-top: 150px;
+        }
+
+        .qualification_container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            gap: 1rem;
+        }
+
+        .grid {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            display: grid;
+        }
+
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            max-width: 900px;
+        }
+
+        @media screen and (min-width: 568px) {
+            .qualification_content {
+                grid-template-columns: max-content 1fr 1fr;
+            }
+        }
+
+        .qualification_content {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-top: 3.5rem;
+            align-items: center;
+        }
+
+        .grid {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            width: 350px;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .qualification_social {
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-right: 50px;
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 568px) {
+            .qualification_info {
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+                width: 200px;
+                height: 200px;
+                grid-column: initial;
+
+            }
+        }
+
+        .qualification_title {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            font-size: 50px;
+            height: 50px;
+            width: 500px;
+        }
+
+        .qualification_subtitle {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 80px;
+            height: 30px;
+            width: 500px;
+            font-size: 35px;
+        }
+
+        .qualification_description {
+
+            margin-bottom: 30px;
+            margin-right: 150px;
+            margin-left: 60px;
+            font-size: 25px;
+            height: 75px;
+            width: 350px;
+        }
+    </style>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> About </a></li>
+            <li><a href="#"> Skills </a></li>
+            <li><a href="#"> Qualifications </a></li>
+            <li><a href="#"> Portfolio </a></li>
+            <li><a href="#"> Contact me </a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <!---------------------------------*HOME SECTION*------------------------------------------>
+        <section class="home section" id="home">
+            <div class="home_container container grid ">
+                <div class="home_content grid">
+                    <div class="home_social"><br>
+                        <a href="https://www.linkedin.com/in/janani-boopathi " target="_blank" class="home_social-icon">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/janani-ob " target="_blank" class="home_social-icon">
+                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:jananiob@gmail.com" target="_blank" class="home_social-icon">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="home_info col-6">
+                        <h1 class="home_title">Hi, I'm Janani</h1>
+                        <h4 class="home_subtitle">Frontend Developer</h4>
+                        <p class="home_description"><br> I am a student studying Computer Science Engineering
+                            in Dr.Mahalingam College of Engineering and Technology.</p>
+                    </div>
+                    <div class="col-6">
+
+
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <img src="https://avatars.githubusercontent.com/u/96721931?v=4" alt="Avatar" class="avatar">
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
+        <section class="about section" id="about">
+            <div class="about_container container grid ">
+                <div class="about_content grid">
+                    <div class="about_social"><br>
+
+                    </div>
+                    <div class="about_info">
+                        <h1 class="about_title">About </h1>
+                        <h4 class="about_subtitle">My introduction</h4>
+                        <p class="about_description"> A budding Front End Web Developer. I run after my goals and
+                            achieve it.
+                            I believe that small efforts make big change.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+        </section>
+
+        <section class="skill section" id="skill">
+            <div class="skill_container container grid ">
+                <div class="skill_content grid">
+                    <div class="skill_social"><br>
+
+                    </div>
+                    <div class="skill_info">
+                        <h1 class="skill_title">Skills </h1>
+                        <h4 class="skill_subtitle">My technical skills</h4>
+                        <div class="skill_description">
+                            <ul>
+                                <li> HTML </li>
+                                <li> CSS </li>
+                                <li> Bootstrap </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
+
+        <section class="qualification section" id="about">
+            <div class="qualification_container container grid ">
+                <div class="qualification_content grid">
+                    <div class="qualification_social"><br>
+
+                    </div>
+                    <div class="qualification_info">
+                        <h3 class="qualification_title">Qualification </h3>
+                        <h4 class="qualification_subtitle">My personal journey</h4>
+                        <div class="container style=" width:100%;margin-left:80px;background-color: #f9f9f9;">
+
+
+
+                            <div class="qualification_description col-6">
+                                <p>
+                                <h3>Education</h3>
+                                </p>
+                                <p>
+                                    Studying 2nd year in Dr.Mahalingam College of Engineering and Technology
+                                    <br>
+                                    CSE
+
+                                </p>
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-6">
+                                <p>
+                                <h3>Work</h3>
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
 
 </body>
 
 </html>
 
-
+</div>
