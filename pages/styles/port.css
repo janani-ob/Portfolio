@@ -332,6 +332,7 @@ img {
     row-gap: 2rem;
 }
 
+
 .skills__subtitle {
     font-size: var(--h3-font-size);
     color: var(--first-color-dark);
